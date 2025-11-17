@@ -17,7 +17,7 @@ const App = () => {
   const [screen, setScreen] = React.useState<'rules' | 'game' | 'finish'>('rules');  
   const audioRef = React.useRef<HTMLAudioElement>(null);
   const [cards, setCards] = React.useState<CardType[]>(shuffleArray(createBoard()));
-  const [gameWon, setGameWon] = React.useState(false);
+  // const [gameWon, setGameWon] = React.useState(false);
   const [matchedPairs, setMatchedPairs] = React.useState(0);
   const [clickedCard, setClickedCard] = React.useState<CardType | undefined>();
 
@@ -29,7 +29,7 @@ const App = () => {
 
   useEffect(() => {
     if (matchedPairs === cards.length / 2) {
-      setGameWon(true);
+      // setGameWon(true);
       setScreen('finish');
     }
   }, [matchedPairs, cards.length]);
@@ -80,7 +80,7 @@ const App = () => {
     setCards(shuffleArray(createBoard()));
     setMatchedPairs(0);
     setClickedCard(undefined);
-    setGameWon(false);
+    // setGameWon(false);
     setScreen('game');
     
   };
